@@ -592,8 +592,8 @@ def resolve_trust_remote_code(trust_remote_code, model_name, has_local_code, has
             trust_remote_code = False
         elif has_remote_code and TIME_OUT_REMOTE_CODE > 0:
             try:
-                signal.signal(signal.SIGALRM, _raise_timeout_error)
-                signal.alarm(TIME_OUT_REMOTE_CODE)
+                #signal.signal(signal.SIGALRM, _raise_timeout_error)
+                #signal.alarm(TIME_OUT_REMOTE_CODE)
                 while trust_remote_code is None:
                     answer = input(
                         f"The repository for {model_name} contains custom code which must be executed to correctly "
