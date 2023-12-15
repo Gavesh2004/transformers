@@ -18,7 +18,6 @@ import importlib
 import os
 import re
 import shutil
-import signal
 import sys
 import typing
 import warnings
@@ -605,7 +604,7 @@ def resolve_trust_remote_code(trust_remote_code, model_name, has_local_code, has
                         trust_remote_code = True
                     elif answer.lower() in ["no", "n", "0", ""]:
                         trust_remote_code = False
-                signal.alarm(0)
+                #signal.alarm(0)
             except Exception:
                 # OS which does not support signal.SIGALRM
                 raise ValueError(
